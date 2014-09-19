@@ -1,6 +1,6 @@
-if (!exists("GCD_Courseproject")) {
-    dir.create("GCD_Courseproject")
-    setwd("./GCD_Courseproject")
+if (!exists("Data")) {
+    dir.create("Data")
+    setwd("./Data")
 }
 
 if (!file.exists("courseproject.zip")){
