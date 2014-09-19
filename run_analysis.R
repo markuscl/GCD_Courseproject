@@ -1,6 +1,6 @@
-if (!exists("GCD_Courseproject")) {
-    dir.create("GCD_Courseproject")
-    setwd("./GCD_Courseproject")
+if (!exists("Data")) {
+    dir.create("Data")
+    setwd("./Data")
 }
 
 if (!file.exists("courseproject.zip")){
@@ -60,10 +60,9 @@ names(total_data) <- c("activity", "subject", as.character(features$V2[indVariab
 total_data$activity <- factor(total_data$activity, levels = activity_labels$V1, labels = activity_labels$V2)
 
 tidy_data <- aggregate(.~ activity + subject, data=total_data, mean)
-write.table(tidy_data, "tidy_data.txt", row.names=FALSE)
+write.table(tidy_data, "../../tidy_data.txt", row.names=FALSE)
 
-
-test <- read.table("tidy_data.txt", header=TRUE)
+test <- read.table("../../tidy_data.txt", header=TRUE)
 
 
 
